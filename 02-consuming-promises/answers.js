@@ -20,6 +20,7 @@ function waitForPromise(promise, action){
  */
 function consumePromise(promise, consumer, handler){
   /* IMPLEMENT ME! */
+  promise.then((result) => consumer(result)).catch((error)=>handler(error));
 }
 
 /**
