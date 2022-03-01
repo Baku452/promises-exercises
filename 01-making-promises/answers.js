@@ -59,7 +59,6 @@ function makeDelayPromise(value, delayInMs) {
       resolve(value);
     },delayInMs );
 
-    reject;
   });
 }
 
