@@ -5,7 +5,9 @@
  * @returns {Promise<3>}
  */
 function makePromiseResolveWith3() {
-  Promise.resolve(3).then();
+  Promise.resolve(3).then(function(value) {
+    return value;
+  });
 }
 
 /**
@@ -16,7 +18,11 @@ function makePromiseResolveWith3() {
  */
 function makePromiseRejectWithBoo() {
  
-  Promise.reject(new Error('Boo')).then();
+  Promise.reject('Boo').then(function(value){
+    return value;
+  }, function(value){
+    return value;
+  });
 }
 
 /**
@@ -27,15 +33,14 @@ function makePromiseRejectWithBoo() {
  * @returns {Promise<undefined, undefined>}
  */
 
-function makePromiseWithConstructor(itShouldResolve) {
+function makePromiseWithConstructor(itShouldResolve){
   return new Promise((resolve, reject) => {
-  /* If itShouldResolve is true, call resolve */
-    if(itShouldResolve){
-      resolve;
+    if(!itShouldResolve){
+      reject(new Error('Error'));
     }else{
-      reject;
+      resolve('Success');
     }
-  /* If itShouldResolve is false, call reject */
+   
   });
 }
 
