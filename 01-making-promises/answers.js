@@ -5,9 +5,7 @@
  * @returns {Promise<3>}
  */
 function makePromiseResolveWith3() {
-  Promise.resolve(3).then(function(value) {
-    return value;
-  });
+  return Promise.resolve(3);
 }
 
 /**
@@ -18,11 +16,7 @@ function makePromiseResolveWith3() {
  */
 function makePromiseRejectWithBoo() {
  
-  Promise.reject('Boo').then(function(value){
-    return value;
-  }, function(value){
-    return value;
-  });
+  return Promise.reject('Boo!');
 }
 
 /**

@@ -8,6 +8,7 @@
  */
 function waitForPromise(promise, action){
   /* IMPLEMENT ME */
+  promise.then(() => {action();});
 }
 /**
  * 
